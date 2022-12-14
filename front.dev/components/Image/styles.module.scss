@@ -1,0 +1,13 @@
+@import "@scss/modules/index.module.scss";
+
+.img {
+    @include transition(opacity, 0.3s);
+
+    opacity: 1;
+
+    will-change: opacity;
+
+    &.hidden {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,221 @@
+@import "@scss/modules/index.module.scss";
+
+$animFullDuraction: 2s;
+$animMoveDuraction: 0.6s;
+
+$rowGap: 20px;
+$mobileRowGap: 2px;
+$rowHeight: 64px;
+
+.bubbleBoxContainer {
+    $height: calc((4 * $rowHeight + 3 * $rowGap));
+    max-height: $height;
+
+    @media (max-width: $max_sm) {
+        $rowGap: $mobileRowGap;
+
+        $height: calc((7 * $rowHeight + 6 * $rowGap));
+
+        max-height: $height;
+    }
+}
+
+.bubbleBoxWrap {
+    @include flex(column);
+
+    $height: calc((6 * $rowHeight + 5 * $rowGap));
+
+    max-height: $height;
+    height: $height;
+    width: 616px;
+
+    pointer-events: none;
+    user-select: none;
+
+    overflow: hidden;
+    transform: translateY(calc(0px - ($rowHeight + $rowGap)));
+
+    @media (max-width: $max_sm) {
+        $rowGap: $mobileRowGap;
+
+        $height: calc((9 * $rowHeight + 8 * $rowGap));
+
+        max-height: $height;
+        height: $height;
+        width: 342px;
+
+        transform: translateY(calc(0px - ($rowHeight + $rowGap)));
+    }
+
+    @media (max-width: 359.9px) {
+        width: 300px;
+    }
+}
+
+.bubbleBox {
+    @include flex(column);
+
+    gap: $rowGap;
+
+    $height: calc((7 * $rowHeight + 6 * $rowGap));
+
+    max-height: $height;
+    height: $height;
+    transform: translateY(calc(2 * (0px - ($rowHeight + $rowGap))));
+
+    will-change: transform, animation;
+
+    @media (max-width: $max_sm) {
+        $rowGap: $mobileRowGap;
+
+        gap: $rowGap;
+
+        $height: calc((10 * $rowHeight + 9 * $rowGap));
+        min-height: $height;
+        height: $height;
+
+        transform: translateY(calc(2 * (0px - ($rowHeight + $rowGap))));
+    }
+
+    & > * {
+        &:nth-child(1),
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:nth-last-child(2) {
+            opacity: 1;
+        }
+
+        @media (min-width: $max_sm) {
+            &:nth-last-child(1) {
+                opacity: 0;
+            }
+
+            &:nth-last-child(2) {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: $max_sm) {
+            &:nth-last-child(4) {
+                opacity: 0;
+            }
+            &:nth-last-child(5) {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.bubbleBoxMoveAnim {
+    @include animation(moveUp, $animMoveDuraction, ease-in-out, 1);
+
+    @media (max-width: $max_sm) {
+        @include animation(moveUpMobile, $animMoveDuraction, ease-in-out, 1);
+    }
+
+    & > * {
+        &:nth-child(3) {
+            @include animation(hide, $animMoveDuraction, ease-in-out, 1);
+
+            opacity: 0;
+            will-change: animation;
+            transform: translateZ(0);
+        }
+
+        @media (min-width: $max_sm) {
+            &:nth-last-child(2) {
+                @include animation(show, $animMoveDuraction, ease-in-out, 1);
+
+                will-change: animation;
+                transform: translateZ(0);
+            }
+        }
+
+        @media (max-width: $max_sm) {
+            &:nth-last-child(5) {
+                @include animation(show, $animMoveDuraction, ease-in-out, 1);
+
+                will-change: animation;
+                transform: translateZ(0);
+            }
+        }
+    }
+}
+
+.bubbleBoxMoved {
+    transform: translateY((0px - ($rowHeight + $rowGap)));
+
+    @media (max-width: $max_sm) {
+        $rowGap: $mobileRowGap;
+
+        transform: translateY((0px - ($rowHeight + $rowGap)));
+    }
+
+    & > * {
+        @media (min-width: $max_sm) {
+            &:nth-last-child(2) {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: $max_sm) {
+            &:nth-last-child(5) {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY((0px - ($rowHeight + $rowGap)));
+    }
+
+    25% {
+        transform: translateY((0px - ($rowHeight + $rowGap)) + 5px);
+    }
+
+    100% {
+        transform: translateY(calc(2 * (0px - ($rowHeight + $rowGap))));
+    }
+}
+
+@keyframes moveUpMobile {
+    0% {
+        transform: translateY((0px - ($rowHeight + $mobileRowGap)));
+    }
+
+    25% {
+        transform: translateY((0px - ($rowHeight + $mobileRowGap)) + 3px);
+    }
+
+    100% {
+        transform: translateY(calc(2 * (0px - ($rowHeight + $mobileRowGap))));
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

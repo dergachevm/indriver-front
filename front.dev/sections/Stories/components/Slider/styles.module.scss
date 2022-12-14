@@ -1,0 +1,135 @@
+@import "@scss/modules/index.module.scss";
+
+.slider {
+    position: relative;
+
+    @media (max-width: $max_md) {
+        margin-left: calc(50% - 50vw);
+        width: 100vw;
+    }
+
+    :global(.splide__track) {
+        overflow: visible;
+    }
+
+    :global(.splide__list) {
+        cursor: grab;
+    }
+
+    :global(.splide__pagination) {
+        @include flex(null, center, center);
+
+        gap: 6px;
+
+        margin-top: 20px;
+
+        li {
+            @include flex(null, center, center);
+
+            width: 20px;
+            height: 20px;
+
+            cursor: pointer;
+        }
+
+        button {
+            width: 20px;
+            height: 20px;
+
+            position: relative;
+
+            background-color: transparent;
+
+            appearance: none;
+
+            outline: none;
+            border: none;
+
+            padding: 0;
+
+            cursor: pointer;
+
+            &:after {
+                @include transition(
+                    #{width,
+                    height,
+                    opacity,
+                    top,
+                    bottom,
+                    left,
+                    right}
+                );
+
+                content: "";
+
+                position: absolute;
+                top: 6px;
+                bottom: 6px;
+                left: 6px;
+                right: 6px;
+
+                border-radius: 50%;
+
+                width: 8px;
+                height: 8px;
+
+                opacity: 0.3;
+
+                background-color: $dark;
+            }
+        }
+
+        button[aria-selected="true"] {
+            cursor: default;
+
+            &:after {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+                content: "";
+
+                width: 20px;
+                height: 20px;
+
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.arrows {
+    @include flex(null, space-between);
+
+    position: absolute;
+    margin-left: calc(50% - 50vw);
+    width: 100vw;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    pointer-events: none;
+
+    @media (max-width: $max_md) {
+        display: none;
+    }
+}
+
+.arrow {
+    width: calc(100% / 3);
+    height: 100%;
+
+    pointer-events: all;
+    cursor: none;
+}
+
+.icon {
+    @include transition(opacity);
+
+    position: fixed;
+
+    will-change: top, left;
+}

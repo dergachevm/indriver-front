@@ -1,0 +1,81 @@
+@import "@scss/modules/index.module.scss";
+
+.content {
+    @include transition(background-color);
+    @include flex(row, space-between);
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    position: relative;
+}
+
+.contentWrap {
+    @include flex(row, space-between);
+
+    width: 100%;
+
+    pointer-events: all;
+
+    gap: 4px;
+}
+
+.container {
+    @include flex(column, space-between);
+
+    width: 100%;
+}
+
+.logo {
+    z-index: 999999999;
+}
+
+.wrapper {
+    z-index: 2000;
+}
+
+.logoIcon {
+    height: 100%;
+
+    svg {
+        @include flexPositionSelf(center);
+
+        path {
+            @include transition(fill);
+        }
+    }
+
+    &.opened {
+        svg {
+            path {
+                fill: $white;
+            }
+        }
+    }
+}
+
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    z-index: 2;
+}
+
+.join {
+    max-width: 141px;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+@keyframes appearance {
+    0% {
+        box-shadow: none;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #00000030;
+    }
+}

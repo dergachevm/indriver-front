@@ -1,0 +1,16 @@
+@import "@scss/modules/index.module.scss";
+
+$rowGap: 20px;
+$animDuraction: 3.5s;
+$animAppearanceDuraction: 0.15s;
+$animDelay: calc($animDuraction - $animAppearanceDuraction);
+
+.bubbleRow {
+    @include flex(row);
+
+    gap: 4px;
+
+    padding: 0 10px;
+
+    width: 100%;
+}

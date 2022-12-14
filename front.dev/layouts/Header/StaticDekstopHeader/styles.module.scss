@@ -1,0 +1,51 @@
+@import "@scss/modules/index.module.scss";
+
+.dekstopHeaderWrap {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.content {
+    @include flex(row, space-between);
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    width: 100%;
+}
+
+.contentBox {
+    @include flex(row, space-between);
+
+    gap: 16px;
+
+    padding-top: 37px;
+    padding-bottom: 37px;
+
+    width: 100%;
+}
+
+.wrapper {
+    z-index: 2000;
+}
+
+.wrap {
+    @include flex(row, space-between, center);
+
+    gap: 100px;
+
+    width: fit-content;
+
+    @media (max-width: $max_md) {
+        gap: 30px;
+    }
+}
+
+.join {
+    max-width: 184px;
+    width: 100%;
+
+    @media (max-width: 950px) {
+        display: none;
+    }
+}

@@ -1,0 +1,315 @@
+@import "@scss/modules/index.module.scss";
+
+.slide {
+    @include flex(null, center, center);
+
+    height: 100%;
+
+    @media (max-width: $max_md) {
+        height: 100%;
+    }
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    background-color: $green-main;
+    border-radius: 32px;
+
+    padding: 40px 20px;
+
+    @media (max-width: $max_sm) {
+        padding: 32px 16px;
+    }
+}
+
+.defaultSlideContent {
+    @include flex(column, space-between);
+
+    height: 100%;
+
+    gap: 16px;
+
+    .header {
+        @include flex(row);
+
+        $gap: 16px;
+        gap: $gap;
+
+        height: 50%;
+        width: 100%;
+
+        @media (max-width: $max_md) {
+            @include flex(column);
+
+            gap: 32px;
+        }
+
+        .messageBox {
+            @include flex(row, flex-start, flex-start);
+
+            width: calc((100% - $gap) / 2);
+
+            @media (max-width: $max_md) {
+                width: 100%;
+            }
+
+            .message {
+                @extend %fontCoilMedium;
+
+                color: $light;
+                position: relative;
+
+                padding: 20px 22px;
+
+                background: $dark;
+                border-radius: 32px;
+
+                .union {
+                    position: absolute;
+                    bottom: 0;
+                    right: -9px;
+                }
+            }
+        }
+
+        .description {
+            @include flex(row);
+
+            @extend %fontCoilMedium;
+
+            color: $light;
+
+            width: calc((100% - $gap) / 2);
+
+            @media (max-width: $max_md) {
+                width: 100%;
+            }
+        }
+    }
+
+    .contentBox {
+        @include flex(row);
+
+        height: 50%;
+        width: 100%;
+    }
+}
+
+.imgSlideContent {
+    @include flex(row, space-between);
+
+    height: 100%;
+
+    gap: 16px;
+
+    @media (max-width: $max_md) {
+        @include flex(column);
+
+        width: 100%;
+
+        gap: 32px;
+    }
+
+    .contentBox {
+        @include flex(column, space-between);
+
+        gap: 16px;
+
+        height: 100%;
+        width: 50%;
+
+        @media (max-width: $max_md) {
+            width: 100%;
+        }
+
+        .title {
+            @extend %fontCofoKakTitle;
+
+            color: $light;
+        }
+    }
+
+    .img {
+        @include flex(column, null, flex-end);
+
+        width: 50%;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: $max_md) {
+            margin-left: -40px;
+            width: 100vw;
+            margin-bottom: -40px;
+
+            img {
+                height: unset;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: $max_sm) {
+            margin-left: -16px;
+        }
+    }
+
+    .achievementCol {
+        width: 50%;
+
+        @media (max-width: $max_md) {
+            width: 100%;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+.graphSlideContent {
+    @include flex(row, space-between);
+
+    height: 100%;
+
+    gap: 25px;
+
+    @media (max-width: $max_md) {
+        @include flex(column, null, null);
+    }
+
+    .contentBox {
+        @include flex(column);
+
+        gap: 24px;
+
+        height: 100%;
+        width: 50%;
+
+        @media (max-width: $max_md) {
+            width: 100%;
+
+            gap: 32px;
+        }
+
+        .title {
+            @extend %fontCofoKakTitle;
+
+            color: $light;
+        }
+    }
+
+    .graph {
+        @include flex(column, null, flex-end);
+
+        height: 100%;
+        width: 50%;
+
+        @media (max-width: $max_md) {
+            height: unset;
+            width: 100%;
+        }
+    }
+
+    .achievementCol {
+        width: 50%;
+        border: none !important;
+        height: auto;
+
+        @media (max-width: $max_md) {
+            @include flex(column);
+
+            padding: 0;
+
+            width: 100%;
+        }
+    }
+
+    .achievementList {
+        @media (max-width: $max_md) {
+            @include flex(column);
+
+            width: 100%;
+        }
+    }
+}
+
+.achievementList {
+    @include flex();
+
+    flex-wrap: wrap;
+
+    &.small {
+        gap: 32px;
+
+        .achievementDesc {
+            @extend %fontCoilSmall;
+
+            @include flex(column);
+
+            gap: 24px;
+        }
+
+        .achievementCol {
+            min-height: fit-content;
+            height: fit-content;
+            gap: 32px;
+        }
+    }
+}
+
+.achievementCol {
+    @include flex(column, space-between);
+
+    gap: 16px;
+    width: 25%;
+    padding: 0 19px;
+
+    height: 258px;
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    &:last-child {
+        padding-right: 0;
+    }
+
+    & + & {
+        border-left: 1px solid rgba(250, 249, 245, 0.25);
+
+        @media (max-width: $max_md) {
+            border-left: none;
+        }
+    }
+
+    @media (max-width: $max_md) {
+        width: 100%;
+        border-top: 1px solid rgba(250, 249, 245, 0.25);
+
+        min-height: 144px;
+        height: fit-content;
+
+        padding: 48px 0 16px;
+
+        height: unset;
+    }
+}
+
+.achievementLabelList {
+    @extend %fontCofoKakTitle;
+
+    @include flex(column);
+
+    overflow: hidden;
+
+    color: $light;
+}
+
+.achievementDesc {
+    @extend %fontCoilMedium;
+
+    color: $light;
+}

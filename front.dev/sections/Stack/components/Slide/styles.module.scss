@@ -1,0 +1,102 @@
+@import "@scss/modules/index.module.scss";
+
+.slide {
+    @include flex(column, space-between);
+
+    padding: 40px;
+
+    min-height: 320px;
+    width: 100%;
+
+    will-change: transform, filter;
+
+    @media (max-width: $max_sm) {
+        @include flex(row, space-between);
+
+        padding: 32px 16px;
+    }
+
+    &Enter {
+        transform: translateX(150%) translateZ(0);
+
+        &Active {
+            @include transition(
+                transform,
+                0.3s,
+                cubic-bezier(0.69, 0.18, 0.01, 1)
+            );
+
+            transform: translateX(0) translateZ(0);
+        }
+    }
+
+    &Exit {
+        position: absolute;
+        top: 0;
+
+        transform: translateX(0);
+
+        &Active {
+            @include transition(
+                transform,
+                0.3s,
+                cubic-bezier(0.69, 0.18, 0.01, 1)
+            );
+
+            transform: translateX(-150%);
+        }
+    }
+}
+
+.labelList {
+    @include flex(row, flex-start);
+
+    flex-wrap: wrap;
+    gap: 3px;
+
+    @media (max-width: $max_sm) {
+        @include flex(column);
+    }
+}
+
+.label {
+    @extend %fontCofoKakTitle;
+
+    @include flex(row, null, center);
+
+    gap: 3px;
+
+    color: $light;
+
+    @media (max-width: $max_sm) {
+        @include flex(null, column, flex-start);
+    }
+}
+
+.imgList {
+    @include flex(row, null, center);
+
+    flex-wrap: wrap;
+    gap: 8px;
+
+    user-select: none;
+    pointer-events: none;
+
+    img {
+        height: 64px;
+    }
+
+    @media (max-width: $max_sm) {
+        @include flex(column, null, flex-end);
+
+        gap: 4px;
+
+        img {
+            height: 54px;
+
+            width: 100%;
+            object-fit: contain;
+            object-position: right;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import "@scss/modules/index.module.scss";
+
+.rowList {
+    @include flex(column);
+
+    gap: 24px;
+
+    @media (max-width: $max_sm) {
+        gap: 12px;
+    }
+}

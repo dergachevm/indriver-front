@@ -1,0 +1,7 @@
+@import "@scss/modules/index.module.scss";
+
+.content {
+    @include flex();
+
+    flex-wrap: wrap;
+}

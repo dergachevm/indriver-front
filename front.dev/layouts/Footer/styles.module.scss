@@ -1,0 +1,96 @@
+@import "@scss/modules/index.module.scss";
+
+.footer {
+    background-color: $dark;
+
+    @media (max-width: $max_md) {
+        gap: 38px;
+    }
+
+    @media (max-width: $max_sm) {
+        @include flex(column);
+
+        gap: 64px;
+    }
+}
+
+.footerContent {
+    @include flex(row);
+
+    gap: 40px;
+
+    padding-top: 32px;
+
+    @media (max-width: $max_md) {
+        gap: 38px;
+    }
+
+    @media (max-width: $max_sm) {
+        @include flex(column);
+
+        gap: 64px;
+
+        padding: 32px;
+    }
+}
+
+.left {
+    @include flex(column);
+
+    gap: 294px;
+
+    width: 100%;
+
+    padding-top: 8px;
+
+    @media (max-width: $max_sm) {
+        padding-top: 0;
+    }
+
+    .head {
+        .title {
+            @extend %fontCofoKakTitle;
+
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+
+            color: $light;
+        }
+
+        .desc {
+            @extend %fontCoilMedium;
+
+            color: $light;
+        }
+
+        .btn {
+            max-width: 240px;
+        }
+
+        .title + .desc {
+            margin-top: 16px;
+        }
+
+        .desc + .btn {
+            margin-top: 24px;
+        }
+    }
+}
+
+.foot {
+    .inDrive {
+        @extend %fontCoilSmall;
+
+        color: $light;
+    }
+
+    .inDrive + .privacy {
+        margin-top: 2px;
+    }
+
+    .privacy {
+        @extend %fontCoilSmall;
+
+        color: $light;
+    }
+}

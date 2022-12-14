@@ -1,0 +1,67 @@
+%fontCoilSmall {
+    @include fontSize(16, 400, 20);
+    @include fontStyle("Coil");
+
+    letter-spacing: -0.01em;
+}
+
+%fontCoilMedium {
+    @include fontSize(20, 400, 24);
+    @include fontStyle("Coil");
+
+    letter-spacing: -0.01em;
+}
+
+%fontCofoKakTitle {
+    @include fontSize(64, 500, 56);
+    @include fontStyle("CoFo Kak");
+
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    @media (max-width: $max_md) {
+        @include fontSize(50, 500, 40);
+        @include fontStyle("CoFo Kak");
+
+        letter-spacing: -0.02em;
+    }
+
+    @media (max-width: $max_sm) {
+        letter-spacing: -0.01em;
+    }
+}
+
+%fontCofoKakTitleBig {
+    @include fontSize(124, 500, 100);
+    @include fontStyle("CoFo Kak");
+
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    @media (max-width: $max_md) {
+        @include fontSize(99, 500, 80);
+    }
+}
+
+%fontCofoKakTitleLarge {
+    @include fontSize(208, 500, 152);
+    @include fontStyle("CoFo Kak");
+
+    letter-spacing: -0.02em;
+
+    @media (max-width: $max_sm) {
+        @include fontSize(98, 500, 72);
+    }
+}
+
+%fontCofoKakTitleBigMain {
+    @include fontSize(124, 500, 100);
+    @include fontStyle("CoFo Kak");
+
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    @media (max-width: $max_md) {
+        @include fontSize(64, 500, 56);
+    }
+}

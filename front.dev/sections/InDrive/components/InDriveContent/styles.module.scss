@@ -1,0 +1,18 @@
+@import "@scss/modules/index.module.scss";
+
+.wrap {
+    $gap: 80px;
+
+    @include flex(column);
+
+    gap: $gap;
+
+    @media (max-width: $max_lg) {
+        gap: 40px;
+    }
+
+    @media (max-width: $max_sm) {
+        $gap: 24px;
+        gap: $gap;
+    }
+}

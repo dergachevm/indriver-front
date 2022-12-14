@@ -1,0 +1,131 @@
+@import "@scss/modules/index.module.scss";
+
+.filter {
+    @include flex(column);
+
+    width: fit-content;
+    user-select: none;
+
+    &.active {
+        flex-grow: 1;
+        flex-shrink: 0;
+        padding-bottom: 32px;
+    }
+
+    &:hover {
+        .label {
+            color: $green-main;
+        }
+
+        .plusIcon {
+            svg {
+                path {
+                    stroke: $green-main;
+                }
+            }
+        }
+    }
+}
+
+.header {
+    @include flex(row, null, center);
+
+    gap: 8px;
+
+    width: fit-content;
+
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+.main {
+    cursor: default;
+}
+
+.active {
+    .label {
+        color: $green-main;
+    }
+
+    .plusIcon {
+        svg {
+            path {
+                stroke: $green-main;
+            }
+        }
+    }
+}
+
+.desc {
+    @extend %fontCoilSmall;
+
+    color: $dark;
+
+    padding-bottom: 32px;
+}
+
+.selectedRange {
+    @extend %fontCoilMedium;
+
+    @include flex(row);
+    @include flexPositionSelf(flex-start);
+
+    color: $green-main;
+
+    width: fit-content;
+}
+
+.labelBox {
+    @include flex(column);
+
+    gap: 4px;
+
+    .wrap {
+        @include flex(row, null, center);
+
+        gap: 2px;
+    }
+}
+
+.label {
+    @extend %fontCofoKakTitle;
+
+    @include transition(color);
+
+    color: $dark;
+}
+
+.plusIcon {
+    svg {
+        path {
+            @include transition(stroke);
+
+            stroke: $dark;
+        }
+    }
+}
+
+.arrowIcon {
+    @include flexPositionSelf(flex-start);
+
+    &Enter {
+        margin-left: -108px;
+
+        &Active {
+            @include transition(margin-left);
+
+            margin-left: 0;
+        }
+    }
+
+    &Exit {
+        margin-left: 0;
+
+        &Active {
+            @include transition(margin-left);
+
+            margin-left: -108px;
+        }
+    }
+}

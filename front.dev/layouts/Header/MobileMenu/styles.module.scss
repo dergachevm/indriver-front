@@ -1,0 +1,47 @@
+@import "@scss/modules/index.module.scss";
+
+.panelWrapper {
+    @include flex(column);
+
+    gap: 24px;
+
+    background-color: $dark;
+
+    box-shadow: 0 0 5px #00000030;
+
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+
+    padding: calc($mobileHeaderHeight + 20px) 16px 32px;
+    transform: translateY(calc(0px - $mobileHeaderHeight));
+}
+
+.panel {
+    @include flex();
+}
+
+.menu {
+    &Enter {
+        opacity: 0;
+
+        &Active {
+            @include transition(opacity);
+
+            opacity: 1;
+        }
+    }
+
+    &Exit {
+        opacity: 1;
+
+        &Active {
+            @include transition(opacity);
+
+            opacity: 0;
+        }
+    }
+}
+
+.join {
+    width: 184px;
+}

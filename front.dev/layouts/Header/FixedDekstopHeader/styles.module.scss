@@ -1,0 +1,70 @@
+@import "@scss/modules/index.module.scss";
+
+.dekstopHeaderWrap {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.container {
+    @include flex(column);
+
+    height: fit-content;
+
+    width: 100%;
+}
+
+.content {
+    @include flex(row, space-between);
+
+    padding: 29px 32px 0;
+    width: 100%;
+}
+
+.contentBox {
+    @include flex(row, space-between);
+
+    gap: 16px;
+
+    padding: 8px;
+    border-radius: 32px;
+    width: 100%;
+
+    background-color: $dark;
+    box-shadow: 0px 8px 16px rgba(40, 52, 61, 0.24);
+
+    pointer-events: all;
+}
+
+.wrapper {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+
+    background-color: transparent !important;
+
+    z-index: 999999999;
+}
+
+.wrap {
+    @include flex(row, space-between, center);
+
+    gap: 40px;
+
+    width: fit-content;
+
+    @media (max-width: $max_md) {
+        gap: 30px;
+    }
+}
+
+.join {
+    max-width: 184px;
+    width: 100%;
+
+    @media (max-width: 950px) {
+        display: none;
+    }
+}

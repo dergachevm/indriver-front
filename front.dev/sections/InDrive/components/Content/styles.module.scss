@@ -1,0 +1,37 @@
+@import "@scss/modules/index.module.scss";
+
+.content {
+    $gap: 40px;
+
+    @extend %fontCoilMedium;
+
+    @include flex(row);
+
+    color: $dark;
+
+    flex-wrap: wrap;
+
+    padding-bottom: 64px;
+
+    gap: $gap;
+
+    & > * {
+        max-width: calc((100% - $gap) / 2);
+
+        @media (max-width: $max_md) {
+            max-width: 100%;
+        }
+    }
+    
+    @media (max-width: $max_lg) {
+        padding-bottom: 32px;
+
+    }
+
+    @media (max-width: $max_md) {
+        $gap: 32px;
+
+        gap: $gap;
+        padding-bottom: 48px;
+    }
+}

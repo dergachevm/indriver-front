@@ -1,0 +1,32 @@
+@mixin fontSize($size: 14, $weight: 400, $height: $size) {
+    font-size: #{$size}px;
+    font-weight: $weight;
+    line-height: #{$height}px;
+}
+
+@mixin fontStyle($family, $style: normal) {
+    font-family: $family;
+    font-style: $style;
+}
+
+@mixin pageTitle() {
+    font-family: "CoFo Kak";
+    font-size: 124px;
+    font-weight: 500;
+    line-height: 0.8;
+    text-transform: uppercase;
+    @media (max-width: $max_md) {
+        font-size: 64px;
+    }
+}
+
+@mixin sectionTitle() {
+    font-family: "CoFo Kak";
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 0.9;
+    text-transform: uppercase;
+    @media (max-width: $max_md) {
+        font-size: 50px;
+    }
+}

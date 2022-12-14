@@ -1,0 +1,43 @@
+@import "@scss/modules/index.module.scss";
+
+.manifectoContent {
+    @include flex(row);
+
+    gap: 16px;
+
+    @media (max-width: $max_sm) {
+        @include flex(column);
+
+        gap: 12px;
+    }
+}
+
+.left {
+    @include flex(column, space-between);
+
+    width: 25%;
+
+    .label {
+        @extend %fontCoilMedium;
+
+        @include flex();
+
+        color: $dark;
+    }
+
+    @media (max-width: $max_sm) {
+        width: 100%;
+    }
+}
+
+.right {
+    width: 75%;
+
+    @media (max-width: $max_sm) {
+        width: 100%;
+    }
+}
+
+.linkBtn {
+    max-width: 240px;
+}

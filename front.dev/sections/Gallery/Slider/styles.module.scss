@@ -1,0 +1,82 @@
+@import "@scss/modules/index.module.scss";
+
+.wrap {
+    height: 488px;
+
+    overflow: visible;
+
+    @media (max-width: $max_sm) {
+        height: 302px;
+    }
+}
+
+.slider {
+    @include flex();
+
+    cursor: grab;
+
+    :global(.splide__track) {
+        overflow: visible;
+        will-change: transform;
+    }
+
+    :global(.splide__list) {
+        will-change: transform;
+    }
+}
+
+.slide {
+    @include flex();
+
+    width: fit-content !important;
+}
+
+.img {
+    @include transition(transform);
+
+    @include flexPositionSelf(flex-end);
+
+    max-height: 488px;
+    border-radius: 32px;
+
+    will-change: transform;
+    object-fit: cover;
+
+    cursor: grab;
+
+    &.active {
+        @include transition(
+            #{transform,
+            z-index},
+            0.3s,
+            ease-in-out,
+            #{0s,
+            0.3s}
+        );
+
+        transform: scale(1.2);
+        z-index: 9999;
+    }
+
+    @media (max-width: $max_sm) {
+        max-height: 302px;
+    }
+}
+
+.imgZIndex {
+    @include animation(zIndex);
+}
+
+@keyframes zIndex {
+    0% {
+        z-index: 9999;
+    }
+
+    99% {
+        z-index: 9999;
+    }
+
+    100% {
+        z-index: 0;
+    }
+}

@@ -1,0 +1,18 @@
+@import "@scss/modules/index.module.scss";
+
+.wrap {
+    @include flex(column);
+
+    width: 100%;
+
+    will-change: max-height;
+}
+
+.firstEl {
+    will-change: transform;
+}
+
+.secondEl {
+    z-index: 500;
+    will-change: transform;
+}

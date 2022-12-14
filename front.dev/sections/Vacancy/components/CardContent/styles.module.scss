@@ -1,0 +1,24 @@
+@import "@scss/modules/index.module.scss";
+
+.contentWrap {
+    width: 100%;
+
+    
+
+    @media (max-width: $max_sm) {
+        max-width: unset;
+    }
+}
+
+.text {
+    @extend %fontCoilMedium;
+
+    color: $dark;
+
+    margin-bottom: 12px;
+}
+
+.linkBtn {
+    max-width: 240px;
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+@import "@scss/modules/index.module.scss";
+
+.card {
+    min-height: 268px;
+    height: 100%;
+
+    @media (max-width: $max_sm) {
+        min-height: 252px;
+    }
+}
+
+.label {
+    @extend %fontCofoKakTitle;
+
+    @include flex(row);
+
+    color: $dark;
+
+    width: 100%;
+}
+
+.content {
+    @include flex(column, flex-end, flex-start);
+
+    gap: 20px;
+
+    width: 100%;
+    min-height: 132px;
+
+    .desc {
+        @extend %fontCoilSmall;
+
+        @include flex(row);
+
+        color: $dark;
+
+        width: 100%;
+    }
+}

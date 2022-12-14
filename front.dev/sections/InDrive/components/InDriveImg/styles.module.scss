@@ -1,0 +1,39 @@
+@import "@scss/modules/index.module.scss";
+
+.inDriveImgWrap {
+    @include flex(column, flex-start, flex-start);
+
+    img {
+        max-width: 564px;
+        max-height: calc((100vh - $laptopTopPadding) * 0.8);
+        width: 100%;
+
+        object-fit: contain;
+
+        will-change: top, position;
+        transform: translateZ(0);
+
+        position: sticky;
+        top: $dekstopTopPadding;
+
+        user-select: none;
+        pointer-events: none;
+
+        @media (max-width: $max_md) {
+            top: $laptopTopPadding;
+
+            max-width: 378px;
+            max-height: calc((100vh - $laptopTopPadding) * 0.8);
+        }
+
+        @media (max-width: $max_sm) {
+            top: $mobileTopPadding;
+
+            max-width: 100%;
+            max-height: calc((100vh - $laptopTopPadding) * 0.8);
+
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+}

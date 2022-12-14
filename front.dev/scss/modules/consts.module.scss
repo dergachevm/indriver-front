@@ -1,0 +1,52 @@
+$green-main: #56bc37;
+$green-light: #b4ed00;
+$dark: #28343d;
+$black: #000000;
+$white: #ffffff;
+$light: #faf9f5;
+$bezh: #ebe9e6;
+
+$dekstopHeaderHeight: 120px;
+$laptopHeaderHeight: 120px;
+$mobileHeaderHeight: 76px;
+$mobileHeaderHeightFixed: 56px;
+
+$offsetFromHeader: 10px;
+
+$dekstopTopPadding: $dekstopHeaderHeight + $offsetFromHeader;
+$laptopTopPadding: $laptopHeaderHeight + $offsetFromHeader;
+$mobileTopPadding: $mobileHeaderHeight + $offsetFromHeader;
+
+$bottomPadding: 10px;
+
+$min_s: 576px;
+$max_s: 575.9px;
+
+$min_sm: 768px;
+$max_sm: 767.9px;
+
+$min_md: 1024px;
+$max_md: 1023.9px;
+
+$min_lg: 1336px;
+$max_lg: 1335.9px;
+
+$max_lg_content: 1596px;
+
+:export {
+    dekstopTopPadding: $dekstopTopPadding;
+    mobileTopPadding: $mobileTopPadding;
+
+    bottomPadding: $bottomPadding;
+
+    greenMain: $green-main;
+    greenLight: $green-light;
+    dark: $dark;
+    black: $black;
+    white: $white;
+    light: $light;
+    bezh: $bezh;
+
+    max_sm: $max_sm;
+    max_md: $max_md;
+}

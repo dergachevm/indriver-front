@@ -1,0 +1,26 @@
+@import "@scss/modules/index.module.scss";
+
+.wrap {
+    @include flex(column);
+
+    gap: 20px;
+}
+
+.title {
+    @extend %fontCofoKakTitle;
+
+    color: $light;
+    z-index: 1;
+}
+
+.slider {
+    pointer-events: none;
+
+    @media (max-width: $max_sm) {
+        pointer-events: all;
+    }
+
+    :global(.splide__track) {
+        overflow: visible;
+    }
+}

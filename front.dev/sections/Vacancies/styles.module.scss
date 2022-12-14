@@ -1,0 +1,117 @@
+@import "@scss/modules/index.module.scss";
+
+$colCount: 12;
+$vacancyListColCount: 7;
+$filtersColCount: calc($colCount - $vacancyListColCount);
+$gap: 32px;
+
+.vacancies {
+    min-height: calc(100vh - $dekstopHeaderHeight);
+
+    overflow-x: hidden;
+    overflow-x: clip;
+
+    @media (max-width: $max_md) {
+        min-height: calc(100vh - $laptopHeaderHeight);
+    }
+
+    @media (max-width: $max_sm) {
+        min-height: calc(100vh - $mobileHeaderHeight);
+    }
+}
+
+.content {
+    @include flex(row);
+
+    gap: $gap;
+
+    padding-top: 20px;
+
+    @media (max-width: $max_lg) {
+        padding-top: 40px;
+    }
+
+    @media (max-width: $max_md) {
+        @include flex(column);
+
+        gap: 64px;
+    }
+}
+
+.filters {
+    width: calc($filtersColCount / $colCount * (100% - $gap));
+    min-height: calc(100vh - $dekstopHeaderHeight - 80px);
+    height: fit-content;
+    padding-top: 20px;
+
+    &.forCategory {
+        width: calc(3 / $colCount * (100% - $gap));
+
+        @media (max-width: $max_md) {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: $max_md) {
+        min-height: calc(100vh - $dekstopHeaderHeight - 60px);
+    }
+
+    @media (max-width: $max_md) {
+        width: 100%;
+        min-height: unset;
+        padding-top: 20px;
+  
+    }
+}
+
+.list {
+    width: calc($vacancyListColCount / $colCount * (100% - $gap));
+
+    &.forCategory {
+        width: calc(9 / $colCount * (100% - $gap));
+
+        @media (max-width: $max_md) {
+            width: 100%;
+        }
+    }
+
+    position: relative;
+
+    @media (max-width: $max_md) {
+        width: 100%;
+        height: fit-content;
+        margin-top: 36px;
+    }
+}
+
+.categoryList,
+.vacancyList {
+    &Enter {
+        @include transition(#{transform, opacity});
+
+        transform: scale(0.8);
+        opacity: 0;
+
+        &Active {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    &Exit {
+        @include transition(#{transform, opacity});
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+
+        &Active {
+            transform: translateX(-40%) translateY(30px);
+            opacity: 0;
+        }
+    }
+}

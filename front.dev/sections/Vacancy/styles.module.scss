@@ -1,0 +1,178 @@
+@import "@scss/modules/index.module.scss";
+
+$padding: 40px;
+
+$lg_padding: 40px;
+$gap: 40px;
+
+.vacancy {
+    background-color: $green-main;
+
+    min-height: calc(100vh - $dekstopHeaderHeight);
+
+    @media (max-width: $max_md) {
+        min-height: calc(100vh - $laptopHeaderHeight);
+    }
+
+    @media (max-width: $max_sm) {
+        min-height: calc(100vh - $mobileHeaderHeight);
+    }
+
+    &.appearance {
+        @include animation(appearance);
+    }
+}
+
+.vacancyWrap {
+    padding-top: 0;
+}
+
+.vacancyContent {
+    @include flex(row, space-between);
+
+    width: 100%;
+
+    gap: $gap;
+
+    padding-bottom: 80px;
+
+    @media (max-width: $max_md) {
+        @include flex(column);
+    }
+
+    @media (max-width: $max_sm) {
+        padding-top: 0;
+        padding-bottom: 64px;
+
+        gap: 32px;
+    }
+}
+
+.left {
+    @include flex(column);
+
+    width: calc((100% - $gap) / 12 * 5);
+
+    @media (max-width: $max_md) {
+        width: 100%;
+    }
+
+    @media (max-width: $max_sm) {
+        width: 100%;
+    }
+}
+
+.cardList {
+    width: calc((100% - $gap) / 12 * 7);
+
+    @media (max-width: $max_md) {
+        width: 100%;
+    }
+
+    @media (max-width: $max_sm) {
+        width: 100%;
+    }
+}
+
+.head {
+    @include flex(column, space-between);
+
+    padding-bottom: 10px;
+
+    position: sticky;
+    top: $dekstopTopPadding;
+    min-height: calc(100vh - $dekstopTopPadding - $padding - $lg_padding);
+
+    @media (max-width: $max_md) {
+        top: unset;
+        position: unset;
+        min-height: unset;
+        gap: 16px;
+    }
+
+    @media (max-width: $max_sm) {
+        top: unset;
+        position: unset;
+        min-height: unset;
+        gap: 16px;
+    }
+}
+
+.title {
+    @extend %fontCofoKakTitleBig;
+
+    color: $light;
+}
+
+.join {
+    width: 100%;
+    display: none;
+
+    @media (max-width: 920px) {
+        @include flex();
+    }
+
+    @media (max-width: $max_sm) {
+        margin-top: 16px;
+    }
+}
+
+.tagBox {
+    @include flex(null, flex-start, flex-start);
+
+    flex-grow: 1;
+}
+
+.link {
+    @extend %fontCoilMedium;
+
+    @include hoverOpacity();
+    @include flex(null, null, center);
+
+    color: $dark;
+
+    gap: 5px;
+
+    @media (max-width: $max_sm) {
+        order: -1;
+        margin: 0 0 56px;
+        width: fit-content;
+    }
+
+    &:hover {
+        color: $dark;
+    }
+}
+
+.linkIcon {
+    transform: scaleX(-1);
+    svg {
+        path {
+            stroke: $dark;
+        }
+    }
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.notFoundVacancyWrap {
+    justify-content: center;
+    align-items: center;
+}
+
+.notFoundVacancy {
+    @extend %fontCofoKakTitle;
+
+    justify-content: center;
+    align-items: center;
+
+    color: $dark;
+}

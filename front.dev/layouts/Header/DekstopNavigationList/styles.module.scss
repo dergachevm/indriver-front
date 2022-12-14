@@ -1,0 +1,46 @@
+@import "@scss/modules/index.module.scss";
+
+.navigationList {
+    @include flex(row);
+
+    width: 100%;
+
+    white-space: nowrap;
+}
+
+.element {
+    @include flex(column, center, center);
+
+    &.withDot {
+        margin-left: 28px;
+
+        position: relative;
+
+        &::before {
+            content: "";
+
+            width: 4px;
+            height: 4px;
+
+            border-radius: 50%;
+
+            position: absolute;
+            top: 50%;
+            left: -14px;
+
+            transform: translateY(-50%);
+        }
+
+        &.light {
+            &::before {
+                background-color: $light;
+            }
+        }
+
+        &.dark {
+            &::before {
+                background-color: $dark;
+            }
+        }
+    }
+}

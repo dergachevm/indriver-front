@@ -1,0 +1,37 @@
+@import "@scss/modules/index.module.scss";
+
+.jobContentWrap {
+    padding: 60px 40px !important;
+
+    min-height: calc(100vh - $dekstopHeaderHeight);
+
+    .jobContent {
+        $gap: 16px;
+
+        @include flex(row, center);
+
+        width: 100%;
+
+        gap: $gap;
+
+        .filter {
+            width: calc((100% - $gap) / 12 * 5);
+            flex-shrink: 0;
+        }
+
+        .vacancies {
+            width: 100%;
+            /*  width: calc((100% - $gap) / 4 * 3); */
+        }
+    }
+
+    @media (max-width: $max_md) {
+        min-height: calc(100vh - $laptopHeaderHeight);
+        padding: 24px 40px 40px !important;
+    }
+
+    @media (max-width: $max_sm) {
+        min-height: calc(100vh - $mobileHeaderHeight);
+        padding: 16px 16px 64px !important;
+    }
+}

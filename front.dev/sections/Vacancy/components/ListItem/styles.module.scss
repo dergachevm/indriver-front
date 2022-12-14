@@ -1,0 +1,17 @@
+@import "@scss/modules/index.module.scss";
+
+.listItem {
+    @extend %fontCoilMedium;
+
+    @include flex();
+
+    color: $dark;
+
+    margin-bottom: 10px;
+
+    gap: 16px;
+}
+
+.iconWrap {
+    padding-top: 5px;
+}

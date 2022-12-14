@@ -1,0 +1,7 @@
+.tabList {
+    @include flex(row);
+
+    flex-wrap: wrap;
+
+    gap: 1px;
+}

@@ -1,0 +1,36 @@
+@import "@scss/modules/index.module.scss";
+
+.card {
+    @include animation(appearence, 0.3s, ease-in-out, 1);
+    @include transition(#{transform, box-shadow}, 0.1s);
+    @include flex(column, space-between, flex-start);
+
+    gap: 20px;
+
+    cursor: pointer;
+
+    padding: 20px;
+
+    background-color: $white;
+    border-radius: 32px;
+
+    position: relative;
+
+    &:hover {
+        z-index: 99999;
+        transform: scale(1.05);
+        box-shadow: 0 0 5px #00000030;
+    }
+}
+
+@keyframes appearence {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

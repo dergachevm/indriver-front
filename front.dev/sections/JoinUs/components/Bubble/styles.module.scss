@@ -1,0 +1,36 @@
+@import "@scss/modules/index.module.scss";
+
+.bubble {
+    @extend %fontCoilMedium;
+
+    @include flex(null, center, center);
+
+    color: $light;
+    background-color: $green-main;
+
+    border-radius: 32px;
+
+    padding: 20px 28px;
+
+    flex-shrink: 0;
+
+    height: 64px;
+
+    position: relative;
+
+    @media (max-width: $max_sm) {
+        padding: 15px 23px;
+    }
+
+    @media (max-width: 359.9px) {
+        @include fontSize(16, 400, 20);
+        @include fontStyle("Coil");
+
+        letter-spacing: -0.01em;
+    }
+}
+
+.corner {
+    position: absolute;
+    top: 32px;
+}

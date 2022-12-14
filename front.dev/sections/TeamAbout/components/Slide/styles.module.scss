@@ -1,0 +1,81 @@
+@import "@scss/modules/index.module.scss";
+
+.wrap {
+    @include flex(null, space-between);
+
+    min-height: 348px;
+    height: 100%;
+    gap: 44px;
+
+    background-color: $light;
+    border-radius: 32px;
+    padding: 40px 60px 40px 18px;
+
+    position: relative;
+
+    @media (max-width: 1200px) {
+        @include flex(column);
+
+        padding: 32px 24px;
+    }
+
+    @media (max-width: $max_sm) {
+        gap: 18px;
+        min-height: unset;
+    }
+}
+
+.img {
+    @include flex();
+
+    height: fit-content;
+
+    position: relative;
+    width: 50%;
+    object-fit: contain;
+
+    &.default {
+        @include flexPositionSelf(flex-end);
+
+        width: 240px;
+    }
+
+    &.cover {
+        width: 258px;
+        margin-top: -92px;
+    }
+
+    @media (max-width: $max_lg) {
+        &.default {
+            width: 153px;
+        }
+
+        &.cover {
+            width: 153px;
+            margin-top: -70px;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        &.default {
+            @include flexPositionSelf(flex-start);
+        }
+
+        &.cover {
+            @include flexPositionSelf(flex-start);
+
+            margin-top: -63px;
+        }
+    }
+}
+
+.text {
+    @extend %fontCoilMedium;
+    
+    user-select: all;
+    color: $dark;
+}
+
+.slide {
+    cursor: grab;
+}

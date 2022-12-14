@@ -1,0 +1,44 @@
+@import "@scss/modules/index.module.scss";
+
+.vacancyListWrap {
+    @include flex(column);
+
+    gap: 12px;
+
+    position: relative;
+}
+
+.vacancyList {
+    @include flex(column);
+
+    gap: 4px;
+}
+
+.vacanciesCount {
+    @extend %fontCoilMedium;
+
+    @include animation(fade);
+    @include flex(row);
+    @include flexPositionSelf(flex-end);
+
+    position: absolute;
+    top: -36px;
+
+    z-index: 999999;
+
+    flex-wrap: nowrap;
+    gap: 16px;
+
+    @media (max-width: $max_md) {
+        left: 0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,43 @@
+@import "@scss/modules/index.module.scss";
+
+.section {
+    background-color: $green-main;
+
+    .sectionWrap {
+        padding-top: 40px;
+        padding-bottom: 80px;
+        height: fit-content;
+    }
+
+    .sectionContent {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: fit-content;
+    }
+
+    .title {
+        @extend %fontCofoKakTitle;
+
+        color: $white;
+        margin-bottom: 8px;
+    }
+
+    &.forModal {
+        background-color: transparent;
+
+        .title {
+            color: $green-light;
+        }
+    }
+
+    @media (max-width: 991.9px) {
+        .section-wrap {
+            padding-top: 32px;
+            padding-bottom: 64px;
+        }
+
+        .title {
+            margin-bottom: 32px;
+        }
+    }
+}

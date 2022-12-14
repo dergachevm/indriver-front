@@ -1,0 +1,10 @@
+.wrap {
+    position: relative;
+
+    .body {
+        overflow: hidden;
+        will-change: height;
+        transition-property: height;
+        transition-timing-function: ease;
+    }
+}

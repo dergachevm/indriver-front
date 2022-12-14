@@ -1,0 +1,58 @@
+@import "@scss/modules/index.module.scss";
+
+.col {
+    @include flex(column, space-between);
+
+    gap: 16px;
+    width: 25%;
+    padding: 0 19px;
+
+    height: 282px;
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    &:last-child {
+        padding-right: 0;
+    }
+
+    & + & {
+        border-left: 1px solid rgba(250, 249, 245, 0.25);
+
+        @media (max-width: $max_sm) {
+            border-left: none;
+        }
+    }
+
+    @media (max-width: $max_lg) {
+        height: 272px;
+    }
+
+    @media (max-width: $max_sm) {
+        width: 100%;
+        border-top: 1px solid rgba(250, 249, 245, 0.25);
+
+        padding: 48px 0 16px;
+
+        height: unset;
+    }
+}
+
+.labelList {
+    @include flex(column);
+
+    overflow: hidden;
+}
+
+.label {
+    @extend %fontCofoKakTitle;
+
+    color: $light;
+}
+
+.desc {
+    @extend %fontCoilMedium;
+
+    color: $light;
+}

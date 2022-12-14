@@ -1,0 +1,9 @@
+@import "@scss/modules/index.module.scss";
+
+.techBox {
+    @include flex(column);
+
+    gap: 4px;
+
+    width: 100%;
+}

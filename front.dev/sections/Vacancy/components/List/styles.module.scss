@@ -1,0 +1,80 @@
+@import "@scss/modules/index.module.scss";
+
+.restList {
+    @include transition(height);
+
+    overflow-y: hidden;
+    overflow-y: clip;
+}
+
+.btn {
+    @extend %fontCoilMedium;
+
+    @include transition(#{width, color, background-color, transform});
+    @include flex(row, space-between, center);
+
+    gap: 8px;
+    overflow-wrap: normal;
+
+    max-width: 240px;
+    width: 100%;
+
+    border-radius: 32px;
+    border-style: solid;
+    border-color: $dark;
+    border-width: 1px;
+
+    background-color: transparent;
+
+    padding: 11px 24px;
+
+    color: $dark;
+
+    cursor: pointer;
+
+    svg {
+        path {
+            @include transition(stroke);
+        }
+    }
+
+    &:hover {
+        color: $dark;
+        background-color: $green-light;
+        transform: scale(1.03);
+
+        svg {
+            path {
+                stroke: $dark;
+            }
+        }
+    }
+
+    &.greenLight {
+        &:hover {
+            color: $light;
+            background-color: $dark;
+            transform: scale(1.03);
+
+            svg {
+                path {
+                    stroke: $light;
+                }
+            }
+        }
+    }
+}
+
+.btnIcon {
+    @include transition(transform);
+
+    svg {
+        path {
+            stroke: $dark;
+        }
+    }
+
+    &.active {
+        transform: rotate(180deg);
+    }
+}

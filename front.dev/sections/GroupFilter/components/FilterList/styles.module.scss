@@ -1,0 +1,7 @@
+@import "@scss/modules/index.module.scss";
+
+.filterList {
+    @include flex(column);
+
+    height: 100%;
+}

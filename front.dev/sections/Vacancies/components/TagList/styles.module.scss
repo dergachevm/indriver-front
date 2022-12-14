@@ -1,0 +1,9 @@
+@import "@scss/modules/index.module.scss";
+
+.tabList {
+    @include flex(row);
+
+    flex-wrap: wrap;
+
+    gap: 1px;
+}

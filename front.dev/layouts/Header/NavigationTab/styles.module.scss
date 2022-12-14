@@ -1,0 +1,30 @@
+@import "@scss/modules/index.module.scss";
+
+.navigationTab {
+    @extend %fontCoilMedium;
+
+    @include hoverOpacity();
+    @include flex(null, flex-start, center);
+
+    width: 100%;
+
+    text-decoration: none;
+
+    &.dark {
+        color: $dark;
+
+        &:hover,
+        &:active {
+            color: $dark;
+        }
+    }
+
+    &.light {
+        color: $white;
+
+        &:hover,
+        &:active {
+            color: $white;
+        }
+    }
+}

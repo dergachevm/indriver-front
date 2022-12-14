@@ -1,0 +1,21 @@
+@import "@scss/modules/index.module.scss";
+
+.title {
+    @extend %fontCofoKakTitle;
+
+    color: $dark;
+}
+
+.section {
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+.sectionContent {
+    gap: 40px;
+
+    @media (max-width: $max_sm) {
+        gap: 32px;
+        padding-bottom: 32px;
+    }
+}

@@ -1,0 +1,20 @@
+@import "@scss/modules/index.module.scss";
+
+.titleWrap {
+    max-width: 230px;
+    @media (max-width: $max_sm) {
+        max-width: unset;
+    }
+}
+
+.cardLayout {
+    width: 100%;
+}
+
+.title {
+    @extend %fontCofoKakTitle;
+
+    color: $dark;
+
+    margin-bottom: 40px;
+}

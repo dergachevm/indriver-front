@@ -1,0 +1,186 @@
+@import "@scss/modules/index.module.scss";
+
+.wrap {
+    @include flex(null, null, flex-start);
+
+    width: fit-content;
+    position: relative;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    .text {
+        @include transition(#{color, margin-left});
+        @include flex(column);
+
+        margin-left: 16px;
+
+        color: $dark;
+
+        .name {
+            @extend %fontCofoKakTitle;
+        }
+
+        .label {
+            @extend %fontCoilMedium;
+        }
+    }
+
+    .iconWrap {
+        @include transition(width, 0.1s);
+        @include flex(row, flex-start, center);
+
+        flex-shrink: 0;
+
+        overflow: hidden;
+        overflow: clip;
+
+        width: 48px;
+
+        @media (max-width: $max_md) {
+            width: 32px;
+        }
+
+        .icon {
+            @include transition(transform);
+
+            transform: translateX(-208px);
+
+            path,
+            circle {
+                @include transition(stroke);
+            }
+
+            @media (max-width: $max_md) {
+                transform: translateX(calc(-1 * ((32px / 44px) * 208px)));
+            }
+        }
+
+        .arrow {
+            @media (max-width: $max_md) {
+                svg {
+                    width: calc((32px / 44px) * 208px);
+                    height: 32px;
+                }
+            }
+        }
+        .numeral {
+            @media (max-width: $max_md) {
+                svg {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            &.show {
+                @include animation(opacityAnim, 0.2s);
+            }
+        }
+    }
+
+    &.forModal {
+        .text {
+            color: $white;
+        }
+
+        .iconWrap {
+            .arrow {
+                path {
+                    fill: $white;
+                }
+            }
+
+            .number {
+                circle,
+                path {
+                    stroke: $light;
+                }
+            }
+        }
+    }
+
+    &.active {
+        .text {
+            margin-left: 12px;
+        }
+
+        .iconWrap {
+            width: 208px;
+
+            @media (max-width: $max_md) {
+                width: 36px;
+            }
+
+            .icon {
+                transform: translateX(0);
+
+                @media (max-width: $max_md) {
+                    transform: translateX(
+                        calc(-1 * ((32px / 44px) * 208px - 36px))
+                    );
+                }
+            }
+
+            .numeral {
+                path,
+                circle {
+                    transition: none;
+
+                    stroke: $light;
+                }
+            }
+        }
+    }
+
+    &.active,
+    &:hover {
+        .text {
+            color: $light;
+        }
+
+        .iconWrap {
+            .numeral {
+                circle,
+                path {
+                    stroke: $light;
+                }
+            }
+        }
+
+        &.forModal {
+            .text {
+                color: $green-light;
+            }
+
+            .iconWrap {
+                .arrow {
+                    path {
+                        fill: $green-light;
+                    }
+                }
+
+                .numeral {
+                    circle,
+                    path {
+                        stroke: $green-light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes opacityAnim {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

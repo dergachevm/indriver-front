@@ -1,0 +1,39 @@
+@import "@scss/modules/index.module.scss";
+
+.card {
+    @include flex(column);
+
+    width: 100%;
+}
+
+.icon {
+    @include flex(null, null, flex-start);
+
+    margin-left: -4px;
+}
+
+.label {
+    @extend %fontCofoKakTitle;
+
+    color: $dark;
+
+    min-height: 112px;
+
+    * + & {
+        margin-top: 12px;
+    }
+
+    @media (max-width: $max_md) {
+        min-height: unset;
+    }
+}
+
+.desc {
+    @extend %fontCoilMedium;
+
+    color: $black;
+
+    * + & {
+        margin-top: 16px;
+    }
+}

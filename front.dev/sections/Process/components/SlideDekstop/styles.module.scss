@@ -1,0 +1,41 @@
+@import "@scss/modules/index.module.scss";
+
+.transition {
+    &Enter {
+        opacity: 0;
+        transform: translateY(40px) scale(1.1);
+        z-index: 9999;
+
+        &Active {
+            @include transition(
+                #{transform,
+                opacity},
+                0.4s,
+                cubic-bezier(0.25, 0.01, 0.01, 0.99)
+            );
+
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    &Exit {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+
+        position: absolute;
+        top: 0;
+
+        &Active {
+            @include transition(
+                #{transform,
+                opacity},
+                0.4s,
+                cubic-bezier(0.25, 0.01, 0.01, 0.99)
+            );
+
+            opacity: 0;
+            transform: translateY(-40px) scale(0.9);
+        }
+    }
+}

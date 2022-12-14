@@ -1,0 +1,40 @@
+@import "@scss/modules/index.module.scss";
+
+.tab {
+    @extend %fontCoilMedium;
+
+    @include transition(#{background-color, color, border, transform});
+    @include flex(null, center, center);
+
+    flex-wrap: nowrap;
+
+    padding: 19px 40px;
+
+    border-radius: 48px;
+    border: 1.1px solid rgba(0, 0, 0, 0.12);
+
+    background-color: $light;
+    color: $dark;
+
+    cursor: default;
+
+    &.active {
+        background-color: $dark;
+
+        color: $light;
+    }
+
+    &:not(.active) {
+        &:hover {
+            cursor: pointer;
+
+            transform: scale(1.03);
+            border-color: $green-light;
+            background-color: $green-light;
+        }
+    }
+
+    @media (max-width: $max_md) {
+        padding: 19px 32px;
+    }
+}

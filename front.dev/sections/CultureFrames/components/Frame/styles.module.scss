@@ -1,0 +1,76 @@
+@import "@scss/modules/index.module.scss";
+
+.frame {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+
+    &:not(:nth-child(1)) {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.frameContentWrap {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.frameContent {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    justify-content: space-between;
+}
+
+.content {
+    @include flex();
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.titleBox {
+    @include flex(column);
+
+    gap: 20px;
+}
+
+.title {
+    @extend %fontCofoKakTitleBigMain;
+
+    color: $light;
+}
+
+.footer {
+    @extend %fontCofoKakTitle;
+
+    @include flex(row);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    gap: 8px;
+
+    align-items: center;
+
+    color: $light;
+
+    .textWrap {
+        @include flex();
+
+        height: fit-content;
+
+        overflow: hidden;
+    }
+}

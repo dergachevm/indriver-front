@@ -1,0 +1,21 @@
+@import "@scss/modules/index.module.scss";
+
+.inDriveContent {
+    $gap: 80px;
+
+    @include flex(row, space-between);
+
+    gap: $gap;
+
+    & > * {
+        width: calc((100% - $gap) / 2);
+
+        @media (max-width: $max_sm) {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: $max_sm) {
+        @include flex(column);
+    }
+}

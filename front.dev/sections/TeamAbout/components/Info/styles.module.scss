@@ -1,0 +1,36 @@
+@import "@scss/modules/index.module.scss";
+
+.wrap {
+    @include flex(column, flex-start, flex-end);
+    @include flexPositionSelf(flex-end);
+
+    width: 50%;
+
+    gap: 40px;
+
+    padding-bottom: 72px;
+
+    @media (max-width: $max_md) {
+        width: 100%;
+
+        padding-bottom: 64px;
+    }
+
+    @media (max-width: $max_sm) {
+        gap: 32px;
+        height: fit-content;
+    }
+}
+
+.text {
+    @extend %fontCoilMedium;
+
+    @include flexPositionSelf(flex-start);
+
+    color: $white;
+}
+
+.btn {
+    max-width: 280px;
+    align-self: flex-start;
+}

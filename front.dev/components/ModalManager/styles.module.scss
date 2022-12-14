@@ -1,0 +1,79 @@
+@import "@scss/modules/index.module.scss";
+
+.modalContainer {
+    @include flex(column, center, center);
+
+    height: 100vh;
+    max-width: 100vw;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgba(40, 52, 61, 0.96);
+
+    z-index: 99999999999;
+
+    &Enter {
+        opacity: 0;
+
+        &Active {
+            @include transition(opacity);
+
+            opacity: 1;
+        }
+    }
+
+    &Exit {
+        opacity: 1;
+
+        &Active {
+            @include transition(opacity);
+
+            opacity: 0;
+        }
+    }
+}
+
+.noScrollable {
+    overflow: hidden;
+}
+
+.closeBtn {
+    @include hoverOpacity();
+
+    width: 44px;
+    height: 44px;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+
+    z-index: 99999999;
+
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+
+        width: 100%;
+        height: 4px;
+        background-color: $white;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    &::after {
+        transform: rotate(45deg);
+    }
+
+    &::before {
+        transform: rotate(-45deg);
+    }
+}

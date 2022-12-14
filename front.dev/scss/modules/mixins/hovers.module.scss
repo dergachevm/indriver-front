@@ -1,0 +1,19 @@
+@import "@scss/modules/mixins/transitions.module.scss";
+
+@mixin hoverOpacity($val: 0.7) {
+    & {
+        @include transition(opacity, 0.15s);
+
+        cursor: pointer;
+
+        &:hover {
+            opacity: $val;
+        }
+    }
+
+    @media (hover: none) {
+        a:hover {
+            color: inherit;
+        }
+    }
+}

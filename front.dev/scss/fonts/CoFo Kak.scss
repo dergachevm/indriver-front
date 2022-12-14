@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "CoFo Kak";
+    src: local("CoFo Kak"), local("CoFoKak-Black"),
+        url("../../assets/fonts/CoFo Kak/CoFo Kak Black.otf");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CoFo Kak";
+    src: local("CoFo Kak"), local("CoFoKak-Regular"),
+        url("../../assets/fonts/CoFo Kak/CoFo Kak Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CoFo Kak";
+    src: local("CoFo Kak Medium"), local("CoFoKak-Medium"),
+        url("../../assets/fonts/CoFo Kak/CoFo Kak Medium.otf");
+    font-weight: 500;
+    font-style: normal;
+}

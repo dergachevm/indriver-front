@@ -1,0 +1,44 @@
+@import "@scss/modules/index.module.scss";
+
+.tag {
+    @include transition(#{color, background-color, border});
+    @include animation(fade);
+
+    background-color: $bezh;
+    color: $dark;
+
+    border: 1px solid #28343d;
+    border-radius: 32px;
+
+    padding: 11px 23px;
+
+    height: 44px;
+
+    pointer-events: all;
+    cursor: pointer;
+
+    &:not(.active):hover {
+        color: $dark;
+        background-color: $green-light;
+        border-color: $green-light;
+    }
+}
+
+.active {
+    background-color: $green-main;
+    color: $light;
+
+    border: 1px solid $green-main;
+}
+
+@keyframes fade {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}

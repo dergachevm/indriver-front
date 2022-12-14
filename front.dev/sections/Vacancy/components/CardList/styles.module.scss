@@ -1,0 +1,27 @@
+@import "@scss/modules/index.module.scss";
+
+.wrap {
+    @include flex(column, null, flex-end);
+
+    width: 100%;
+
+    @media (max-width: $max_md) {
+        width: 50%;
+    }
+
+    @media (max-width: $max_sm) {
+        width: 100%;
+    }
+}
+
+.cardList {
+    @include flex(column, null, center);
+
+    gap: 2px;
+
+    width: 100%;
+
+    @media (max-width: $max_sm) {
+        gap: 4px;
+    }
+}

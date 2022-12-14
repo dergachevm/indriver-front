@@ -1,0 +1,19 @@
+@import "@scss/modules/index.module.scss";
+
+.navigationList {
+    @include flex(column);
+
+    width: 100%;
+
+    white-space: nowrap;
+}
+
+.element {
+    @include flex(column, center, center);
+
+    padding: 23px 0;
+
+    & + & {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}

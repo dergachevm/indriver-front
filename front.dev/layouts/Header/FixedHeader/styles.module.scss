@@ -1,0 +1,14 @@
+@import "@scss/modules/index.module.scss";
+
+.header {
+    @include transition(transform);
+
+    will-change: transform;
+    transform: translateY(0);
+}
+
+.hide {
+    @include transition(transform);
+
+    transform: translateY(-100%);
+}

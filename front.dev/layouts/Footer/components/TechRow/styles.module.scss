@@ -1,0 +1,57 @@
+@import "@scss/modules/index.module.scss";
+
+.techRow {
+    $verticalGap: 4px;
+
+    @include flex(row);
+
+    gap: 4px;
+
+    @media (max-width: $max_sm) {
+        $verticalGap: 2px;
+
+        gap: 3px $verticalGap;
+    }
+
+    &:nth-child(1n + 1) {
+        & > *:first-child {
+            @include flex();
+
+            width: calc((100% - $verticalGap) / 2);
+        }
+
+        & > *:last-child {
+            @include flex();
+
+            width: calc((100% - $verticalGap) / 2);
+        }
+    }
+
+    &:nth-child(1n + 2) {
+        & > *:first-child {
+            @include flex();
+
+            width: calc((100% - $verticalGap) / 3 * 2);
+        }
+
+        & > *:last-child {
+            @include flex();
+
+            width: calc((100% - $verticalGap) / 3);
+        }
+    }
+
+    &:nth-child(1n + 3) {
+        & > *:first-child {
+            @include flex();
+
+            width: calc((100% - $verticalGap) / 3);
+        }
+
+        & > *:last-child {
+            @include flex();
+
+            width: calc((100% - $verticalGap) / 3 * 2);
+        }
+    }
+}

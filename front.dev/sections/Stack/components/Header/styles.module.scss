@@ -1,0 +1,19 @@
+@import "@scss/modules/index.module.scss";
+
+.header {
+    @include flex(column);
+
+    gap: 8px;
+}
+
+.labelHead {
+    @extend %fontCoilMedium;
+
+    color: $dark;
+}
+
+.label {
+    @extend %fontCofoKakTitle;
+
+    color: $dark;
+}

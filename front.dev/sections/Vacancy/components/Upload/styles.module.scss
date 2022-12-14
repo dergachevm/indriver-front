@@ -1,0 +1,128 @@
+@import "@scss/modules/index.module.scss";
+
+.inputWrap {
+    @include transition(#{border, margin});
+
+    width: 100%;
+    height: 32px;
+
+    border-bottom: 1px solid $dark;
+
+    cursor: pointer;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    &.error {
+        border-bottom-color: red;
+
+        &:not(:last-child) {
+            margin-bottom: 28px;
+        }
+    }
+
+    &.hasValue {
+        border-bottom-width: 4px !important;
+    }
+}
+
+.label {
+    @extend %fontCoilSmall;
+
+    @include transition(color);
+    @include flex(null, space-between, center);
+
+    color: $dark;
+
+    padding: 6px 0 5px;
+
+    cursor: pointer;
+
+    svg {
+        path {
+            @include transition(stroke);
+        }
+    }
+
+    .text {
+        @include transition(color);
+    }
+
+    &.error {
+        svg {
+            path {
+                stroke: red;
+            }
+        }
+
+        .textWrap {
+            color: red;
+        }
+    }
+}
+
+.input {
+    display: block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    z-index: -1;
+    line-height: 0;
+    font-size: 0px;
+
+    padding: 0px;
+    margin: 0px;
+
+    appearance: none;
+    border: none;
+}
+
+.alertMsg {
+    @extend %fontCoilSmall;
+
+    @include animation(appearance);
+    @include flex();
+
+    color: red;
+
+    margin-top: 4px;
+
+    &.hide {
+        @include animation(hide);
+
+        display: none;
+    }
+}
+
+.textWrap {
+    @include flex();
+
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 8px;
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+        display: flex;
+    }
+
+    100% {
+        opacity: 0;
+        display: flex;
+    }
+}

@@ -1,0 +1,42 @@
+@import "@scss/modules/index.module.scss";
+
+.header {
+    @include flex(column);
+
+    gap: 16px;
+
+    .labelWrap {
+        @extend %fontCofoKakTitle;
+
+        @include flex(row);
+
+        width: fit-content
+    }
+}
+
+.label {
+    @extend %fontCofoKakTitle;
+
+    color: $dark;
+}
+
+.content {
+    @extend %fontCoilMedium;
+
+    color: $dark;
+}
+
+.icon {
+    @include flexPositionSelf(flex-end);
+
+    @media (max-width: $max_lg) {
+        svg {
+            height: 48px !important;
+            width: 48px !important;
+        }
+    }
+
+    @media (max-width: $max_sm) {
+        display: inline-flex;
+    }
+}

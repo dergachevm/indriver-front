@@ -1,0 +1,7 @@
+@import "@scss/modules/index.module.scss";
+
+.title {
+    @extend %fontCofoKakTitle;
+
+    color: $dark;
+}

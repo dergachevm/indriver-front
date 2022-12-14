@@ -1,0 +1,57 @@
+@import "@scss/modules/index.module.scss";
+
+.text {
+    @extend %fontCoilMedium;
+
+    color: $dark;
+
+    margin-bottom: 40px;
+
+    max-width: 214px;
+
+    @media (max-width: $max_sm) {
+        max-width: unset;
+    }
+}
+
+.form {
+    width: 60%;
+
+    @media (max-width: $max_sm) {
+        width: 100%;
+        max-width: unset;
+    }
+}
+
+.inputList {
+    margin-bottom: 40px;
+}
+
+.submitBtn {
+    @include transition(opacity, color, background-color, transform);
+
+    max-width: 240px;
+    width: 100%;
+
+    @media (max-width: $max_sm) {
+        max-width: 100%;
+    }
+
+    svg {
+        path {
+            @include transition(stroke);
+        }
+    }
+
+    &:hover {
+        color: $dark;
+        background-color: $green-light;
+        transform: scale(1.03);
+
+        svg {
+            path {
+                stroke: $dark;
+            }
+        }
+    }
+}

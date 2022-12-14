@@ -1,0 +1,20 @@
+@import "@scss/modules/index.module.scss";
+
+.wrap {
+    @include flex(row);
+
+    gap: 20px;
+
+    .tabList,
+    .slideList {
+        width: 100%;
+        max-width: calc(50% - 20px);
+    }
+
+    .tabList {
+        @include flex(column);
+
+        gap: 12px;
+        padding-top: 40px;
+    }
+}

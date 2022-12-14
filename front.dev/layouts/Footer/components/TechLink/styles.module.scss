@@ -1,0 +1,48 @@
+@import "@scss/modules/index.module.scss";
+
+.tech {
+    @extend %fontCoilMedium;
+
+    @include transition(#{color, background-color, transform});
+    @include flex(column);
+
+    color: $light;
+    background-color: $dark;
+
+    padding: 28px;
+    height: 216px;
+
+    border: 1.2px solid rgba(250, 249, 245, 0.2);
+    border-radius: 32px;
+
+    text-decoration: none;
+
+    justify-content: space-between;
+
+    .icon {
+        @include flex();
+        @include flexPositionSelf(flex-end);
+
+        width: fit-content;
+
+        path {
+            @include transition(stroke);
+        }
+    }
+
+    @media (max-width: $max_sm) {
+        padding: 24px;
+    }
+
+    &:hover {
+        color: $dark;
+        background-color: $green-light;
+        transform: scale(1.03);
+
+        .icon {
+            path {
+                stroke: $dark;
+            }
+        }
+    }
+}

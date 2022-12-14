@@ -1,0 +1,46 @@
+@import "@scss/modules/index.module.scss";
+
+.main {
+    @include flex(column);
+
+    flex-grow: 1;
+
+    min-height: 100%;
+    min-width: 100%;
+
+    &.light {
+        background-color: $light;
+    }
+
+    &.bezh {
+        background-color: $bezh;
+    }
+
+    &.green {
+        background-color: $green-main;
+    }
+
+    &.transparent {
+        background-color: transparent;
+    }
+}
+
+.body {
+    @include transition(background-color);
+
+    &.light {
+        background-color: $light;
+    }
+
+    &.bezh {
+        background-color: $bezh;
+    }
+
+    &.green {
+        background-color: $green-main;
+    }
+
+    &.transparent {
+        background-color: transparent;
+    }
+}

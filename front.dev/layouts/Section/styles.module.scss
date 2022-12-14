@@ -1,0 +1,61 @@
+@import "@scss/modules/index.module.scss";
+
+.section {
+    @include flex(column, null, center);
+
+    width: 100%;
+    height: fit-content;
+
+    z-index: 1;
+    position: relative;
+
+    @media (max-width: $max_sm) {
+        padding: 0;
+    }
+}
+
+.sectionWrap {
+    @include flex(column, null, center);
+
+    width: 100%;
+
+    padding: 40px 0;
+
+    z-index: 2;
+    position: relative;
+
+    @media (max-width: $max_lg) {
+        padding: 0;
+    }
+}
+
+.sectionContent {
+    @include flex(column);
+
+    max-width: $max_lg_content;
+    width: 100%;
+
+    padding: 40px;
+
+    z-index: 3;
+    position: relative;
+
+    @media (max-width: $max_sm) {
+        padding: 32px 16px 64px;
+    }
+}
+
+.bgImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -1;
+}

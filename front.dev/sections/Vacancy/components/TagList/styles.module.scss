@@ -1,0 +1,12 @@
+@import "@scss/modules/index.module.scss";
+
+.tagList {
+    @include flex();
+
+    flex-wrap: wrap;
+    gap: 4px 1px;
+}
+
+.tag {
+    background-color: $light !important;
+}

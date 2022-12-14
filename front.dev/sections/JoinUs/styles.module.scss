@@ -1,0 +1,128 @@
+@import "@scss/modules/index.module.scss";
+
+.joinUs {
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+.paralaxWrap {
+    min-height: 720px;
+    width: 100%;
+
+    @media (max-width: $max_lg) {
+        min-height: 640px;
+    }
+
+    @media (max-width: $max_sm) {
+        min-height: 760px;
+    }
+}
+
+.content {
+    justify-content: center;
+    gap: 56px;
+
+    width: 100%;
+
+    @media (max-width: $max_sm) {
+        gap: 32px;
+    }
+}
+
+.bubbleBox {
+    @include flex(column, center, center);
+
+    gap: 28px;
+}
+
+.label {
+    @extend %fontCofoKakTitle;
+
+    color: $light;
+
+    @media (max-width: $max_sm) {
+        padding: 0 16px;
+    }
+}
+
+.btn {
+    max-width: 240px;
+}
+
+.tabList {
+    @include flex(row, center);
+
+    gap: 6px;
+
+    width: 100%;
+}
+
+.tab {
+    @include transition(#{background-color, color, border, height, width});
+
+    @include flex(null, center, center);
+
+    height: 20px;
+    width: 20px;
+
+    border-radius: 50%;
+
+    background-color: $light;
+
+    pointer-events: none;
+
+    $anim-duraction: 1s;
+
+    &:nth-child(1) {
+        @include animation(fadeIn1, $anim-duraction, easy-in-out, infinite);
+    }
+    &:nth-child(2) {
+        @include animation(fadeIn2, $anim-duraction, easy-in-out, infinite);
+    }
+    &:nth-child(3) {
+        @include animation(fadeIn3, $anim-duraction, easy-in-out, infinite);
+    }
+}
+
+@keyframes fadeIn1 {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn2 {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn3 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}

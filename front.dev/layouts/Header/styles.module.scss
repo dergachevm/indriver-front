@@ -1,0 +1,43 @@
+@import "@scss/modules/index.module.scss";
+
+.header {
+    @include transition(#{opacity, background-color}, 0.3s);
+    height: $dekstopHeaderHeight;
+    width: 100%;
+
+    z-index: 99999;
+
+    &.green {
+        background-color: $green-main;
+    }
+
+    &.light {
+        background-color: $light;
+    }
+
+    &.bezh {
+        background-color: $bezh;
+    }
+
+    &.dark {
+        background-color: $dark;
+    }
+
+    &.white {
+        background-color: $white;
+    }
+
+    &.transparent {
+        background-color: transparent;
+    }
+
+    @media (max-width: $max_sm) {
+        height: $mobileHeaderHeight;
+    }
+}
+
+.trigger {
+    opacity: 0;
+    max-height: 0;
+    width: 100%;
+}

@@ -1,0 +1,5 @@
+@import "@scss/modules/index.module.scss";
+
+.icon {
+    @include flex();
+}

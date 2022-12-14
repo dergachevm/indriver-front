@@ -1,0 +1,44 @@
+@import "@scss/modules/index.module.scss";
+
+.header {
+    @include flex(row);
+
+    flex-grow: 1;
+
+    @media (max-width: $max_sm) {
+        @include flex(column);
+
+        gap: 64px;
+    }
+}
+
+.label {
+    @extend %fontCoilMedium;
+
+    @include flex(null, flex-start, flex-start);
+
+    width: 50%;
+
+    color: $light;
+
+    @media (max-width: $max_sm) {
+        width: 100%;
+    }
+}
+
+.desc {
+    @extend %fontCoilMedium;
+
+    @include flex(null, flex-start, flex-start);
+
+    width: 50%;
+
+    padding-left: 19px;
+
+    color: $light;
+
+    @media (max-width: $max_sm) {
+        width: 100%;
+        padding-left: 0px;
+    }
+}

@@ -1,0 +1,127 @@
+@import "@scss/modules/index.module.scss";
+
+.dekstopHeaderWrap {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.container {
+    @include flex(column);
+
+    width: 100%;
+    height: fit-content;
+}
+
+.content {
+    @include flex(row, space-between);
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    width: 100%;
+}
+
+.contentBox {
+    @include flex(row, space-between);
+
+    gap: 16px;
+
+    padding-top: 37px;
+    padding-bottom: 37px;
+
+    width: 100%;
+}
+
+.wrapper {
+    z-index: 2000;
+}
+
+.trigger {
+    opacity: 0;
+}
+
+.shadowEl {
+    height: $dekstopHeaderHeight;
+}
+
+.wrap {
+    @include flex(row, space-between, center);
+
+    gap: 100px;
+
+    width: fit-content;
+
+    @media (max-width: $max_md) {
+        gap: 30px;
+    }
+}
+
+.join {
+    max-width: 184px;
+    width: 100%;
+
+    @media (max-width: 950px) {
+        display: none;
+    }
+}
+
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: $green-main;
+    box-shadow: 0 0 5px #00000030;
+
+    z-index: 999999999;
+
+    @include animation(appearanceBoxShadow, 0.3s, ease-in-out, 1);
+
+    @media (max-width: $max_sm) {
+        height: $mobileHeaderHeight;
+    }
+}
+
+.thin {
+    background-color: transparent !important;
+
+    &.fixedHeader {
+        animation: none !important;
+        box-shadow: none !important;
+    }
+
+    &.content {
+        padding: 29px 32px 0;
+
+        & .contentBox {
+            @include transition(background-color);
+            @include flex(row, space-between);
+            padding: 8px;
+            border-radius: 32px;
+            background-color: $dark !important;
+
+            pointer-events: all;
+
+            box-shadow: 0px 8px 16px rgba(40, 52, 61, 0.24);
+
+            & .wrap {
+                gap: 40px;
+            }
+        }
+    }
+}
+
+@keyframes appearanceBoxShadow {
+    0% {
+        box-shadow: none;
+    }
+
+    50% {
+        box-shadow: none;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #00000030;
+    }
+}

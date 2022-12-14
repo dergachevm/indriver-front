@@ -1,0 +1,143 @@
+@import "@scss/modules/index.module.scss";
+
+.mainHeader {
+    @include flex(column);
+
+    overflow: hidden;
+    background-color: $green-main;
+
+    width: 100%;
+    min-height: $dekstopHeaderHeight;
+
+    z-index: 999;
+
+    @media (max-width: $max_sm) {
+        min-height: $mobileHeaderHeight;
+    }
+}
+
+.wrap {
+    @include transition(padding);
+    @include flex(column);
+
+    position: relative;
+
+    width: 100%;
+    max-width: $max_lg_content;
+
+    padding: 0 0 40px;
+    margin: 0 auto;
+
+    gap: 184px;
+
+    @media (max-width: $max_lg) {
+        padding: 0;
+    }
+
+    @media (max-width: $max_lg) {
+        gap: 364px;
+    }
+}
+
+.content {
+    @include flex(column);
+
+    padding: 80px 32px 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    gap: 24px;
+
+    .label {
+        @extend %fontCofoKakTitleLarge;
+
+        @include flex();
+
+        padding-left: 4px;
+
+        color: #28343d;
+
+        @media (max-width: $max_sm) {
+            padding-left: 0px;
+        }
+    }
+
+    .join {
+        width: 304px;
+
+        @media (max-width: $max_sm) {
+            max-width: 304px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: $max_lg) {
+        padding-top: 40px;
+    }
+
+    @media (max-width: $max_sm) {
+        gap: 16px;
+        padding: 40px 16px 32px;
+    }
+}
+
+.bgImage {
+    @include transition(opacity);
+
+    position: absolute;
+    right: -73px;
+    top: -130px;
+    z-index: 1000;
+
+    width: 1017px;
+    height: 1017px;
+
+    user-select: none;
+    pointer-events: none;
+
+    &.hide {
+        opacity: 0;
+    }
+
+    @media (max-width: 1450px) {
+        bottom: -39px;
+        top: -30px;
+        width: 950px;
+        height: 950px;
+    }
+
+    @media (max-width: $max_lg) {
+        right: -42px;
+        top: 16px;
+        width: 812px;
+        height: 812px;
+    }
+
+    @media (max-width: 1220px) {
+        top: 70px;
+        width: 750px;
+        height: 750px;
+    }
+
+    @media (max-width: $max_md) {
+        right: -87px;
+        top: 119px;
+        width: 640px;
+        height: 640px;
+    }
+
+    @media (max-width: 900px) {
+        right: -190px;
+    }
+
+    @media (max-width: $max_sm) {
+        right: -14px;
+
+        width: 491px;
+        height: 491px;
+
+        top: 16px;
+    }
+}

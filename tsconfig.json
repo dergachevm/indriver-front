@@ -1,0 +1,77 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "jsx": "react-jsx",
+        "allowJs": false,
+        "skipLibCheck": true,
+        "alwaysStrict": true,
+        "pretty": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "target": "es3",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        // Hell-mode - comment it
+        "isolatedModules": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strict": true,
+        "allowUnreachableCode": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "resolveJsonModule": true,
+        //
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules",
+            }
+        ],
+        "baseUrl": "./",
+        "paths": {
+            "@pages/*": [
+                "front.dev/pages/*"
+            ],
+            "@sections/*": [
+                "front.dev/sections/*"
+            ],
+            "@components/*": [
+                "front.dev/components/*"
+            ],
+            "@assets/*": [
+                "front.dev/assets/*"
+            ],
+            "@scss/*": [
+                "front.dev/scss/*"
+            ],
+            "@layouts/*": [
+                "front.dev/layouts/*"
+            ],
+            "@utils/*": [
+                "front.dev/utils/*"
+            ],
+            "@hooks/*": [
+                "front.dev/hooks/*"
+            ],
+            "@router/*": [
+                "front.dev/router/*"
+            ],
+            "@services/*": [
+                "front.dev/services/*"
+            ],
+            "@dev/*": [
+                "front.dev/*"
+            ],
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "front.dev/**/*",
+        "global.d.ts"
+    ]
+}

@@ -1,0 +1,21 @@
+@import "@scss/modules/index.module.scss";
+
+.sectionContent {
+    gap: 20px;
+
+    @media (max-width: $max_md) {
+        gap: 12px;
+
+        padding-bottom: 32px;
+    }
+}
+
+.section {
+    overflow: hidden;
+}
+
+.title {
+    @extend %fontCoilMedium;
+
+    color: $dark;
+}
