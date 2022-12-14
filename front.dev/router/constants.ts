@@ -1,7 +1,7 @@
 import Job from "@pages/Job";
 import Main from "@pages/Main";
 import Team from "@pages/Team";
-import Culture from "@pages/Culture";
+// import Culture from "@pages/Culture";
 import JobListing from "@pages/JobListing";
 import { getRandomId } from "@utils/shared";
 import Development from "@pages/Development";
@@ -54,11 +54,11 @@ export const routeList: Array<TRouteData> = [
         name: "Team",
         path: pagePathRecord[Page.Team],
     },
-    {
+    /*{
         Component: Culture,
         id: getRandomId(),
         name: "Culture",
         path: pagePathRecord[Page.Culture],
-    },
+    },*/
     ...(process.env.NODE_ENV === "development" ? devPages : []),
 ];
