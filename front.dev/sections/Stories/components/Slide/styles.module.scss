@@ -228,6 +228,8 @@
     }
 
     .achievementList {
+        flex-wrap: nowrap;
+        
         @media (max-width: $max_md) {
             @include flex(column);
 
