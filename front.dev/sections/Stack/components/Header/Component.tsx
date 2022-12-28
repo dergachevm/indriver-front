@@ -12,7 +12,7 @@ const Header: THeaderComponent = () => {
             <div className={styles.label}>
                 <MultilineText
                     text={
-                        "What we love, can, and use!<:0-9999:>always open to learn something new, too!"
+                        "WHAT WE LOVE, CAN, AND USE!<:0-9999:>ALWAYS OPEN TO LEARNING SOMETHING NEW, TOO!"
                     }
                 />
             </div>

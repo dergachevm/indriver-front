@@ -6,7 +6,7 @@ import technicalValueBg from "@assets/img/technicalValueBg.png";
 export const aboutInDriveData: TCardData = {
     content: [
         {
-            desc: "From the US and Mexico all the way to Russia and Tansania",
+            desc: "From the US and Mexico to Russia and Tanzania",
             id: getRandomId(),
             label: ["625+ cities", "42 countries"],
         },
@@ -22,14 +22,14 @@ export const aboutInDriveData: TCardData = {
         },
         {
             desc:
-                "As if we had the populations of Sweden, Sri-Lanka, Australia, and Canada together with us",
+                "As if we had the populations of Sweden, Sri Lanka, Australia, and Canada together with us",
             id: getRandomId(),
             label: ["100 million", "users"],
         },
     ],
     header: {
         desc:
-            "inDrive is a story about a startup from Yakutsk that evolved into a global company and is catching up with Uber in 42 countries and 625 cities all across the globe with its headquarters located in California!",
+            "inDrive is a story about a startup from Yakutsk that evolved into a global company. It is catching up with Uber in 42 countries and 625 cities all across the globe, with its headquarters in California!",
         label: "About inDrive",
     },
 };
@@ -60,7 +60,7 @@ export const technicalValueData: TCardData = {
     ],
     header: {
         desc:
-            "inDrive is a story about a startup from Yakutsk that evolved into a global company and is catching up with Uber in 42 countries and 625 cities all across the globe with its headquarters located in California!",
+            "inDrive is a story about a startup from Yakutsk that evolved into a global company. It is catching up with Uber in 42 countries and 625 cities all across the globe, with its headquarters in California!",
         label: "Technical value",
     },
 };

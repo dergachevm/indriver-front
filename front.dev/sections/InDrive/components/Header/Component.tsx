@@ -45,7 +45,7 @@ const Header: THeaderComponent = () => {
             </div>
             <div className={styles.content}>
                 {
-                    "inDrive is about the freedom of choice for 100 million people all over the world! Say goodbye to high demand, hidden fees, and intermediaries. Transparent terms, honest prices, and full freedom are at your disposal."
+                    "inDrive is about the freedom of choice for 100 million people worldwide! Say goodbye to high demand, hidden fees, and intermediaries. Transparent terms, honest prices, and full freedom are at your disposal."
                 }
             </div>
         </div>

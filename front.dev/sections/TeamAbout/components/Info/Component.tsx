@@ -12,7 +12,7 @@ const Info: TInfoComponent = () => {
         <div className={styles.wrap}>
             <div className={styles.text}>
                 {
-                    "A text about a cool team, interesting tasks. Et sodales cras nec ridiculus amet. Nec, sit morbi amet, rutrum. Cras nec et ipsum volutpat egestas cras. Orcitortor tincidunt at dictum. Posuere quisque sapien turpis faucibus imperdiet potenti scelerisque imperdiet neque."
+                    "inDrive is an international technological platform for transport and personal services. We are one of the top 2 mobile travel services in the world with over 150 million installs, over 2 billion trips, and 700+ cities in 40+ countries."
                 }
             </div>
             <LinkBtn

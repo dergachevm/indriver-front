@@ -38,7 +38,7 @@ const Footer: TFooterComponent = () => {
                     <div className={styles.title}>
                         <MultilineText
                             text={
-                                "inDrive — reliability<:0-9999:>of a corporation<:1024-9999:>and freedon of a startup"
+                                "inDrive — reliability<:0-9999:>of a corporation<:1024-9999:>and freedom of a startup"
                             }
                         />
                     </div>

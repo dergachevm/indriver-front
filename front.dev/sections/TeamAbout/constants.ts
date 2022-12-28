@@ -12,7 +12,7 @@ export const sliderData: Array<TSlideData> = [
         imgType: "default",
 
         text:
-            "InDriver does not strive to make a developer a submissive performer of tasks from above, but, on the contrary, they are interested in the freedom of conscious professional expression",
+            "inDrive development team, which for the sake of constant growth knows how to experiment and learn from mistakes. That's 450+ engineers working in over 50 cross-functional teams.",
     },
     {
         id: getRandomId(),
@@ -20,6 +20,6 @@ export const sliderData: Array<TSlideData> = [
         imgType: "cover",
 
         text:
-            "inDriver is the personification of the alternative. This is a company that has found financial stability. Working in it, you can not worry about the danger of wasting time.",
+            "We employ people who are not afraid to take responsibility and create their own rules when the usual ones do not work. The main thing is the freedom of professional expression of inDrive.Tech developers.",
     },
 ];

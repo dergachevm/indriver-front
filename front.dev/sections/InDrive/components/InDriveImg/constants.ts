@@ -26,7 +26,7 @@ export const contentData: Array<TContentData> = [
     },
     {
         desc:
-            "We provide you with all options possible, you need to choose the most convenient one based on the end fare, car model, driver's rating, and vehicle delivery time",
+            "We provide you with all options possible; you need to choose the most convenient one based on the end fare, car model, driver's rating, and vehicle delivery time",
         icon: "star",
         id: getRandomId(),
         label: "Choose the best deal",

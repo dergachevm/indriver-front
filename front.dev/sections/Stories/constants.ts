@@ -33,7 +33,7 @@ export const sliderData: Array<TSlideData> = [
         description:
             "Raised $900,000 as part of a seed round at the AdVentureLand site of the Skolkovo Technopark. The project was funded by Starta Capital, members of the Angelsdeck club and private venture investors. The company was also named the future unicorn as part of the StartHub Moscow award and was included in the rating of the 100 most successful Russian startups",
         id: getRandomId(),
-        message: "Raised $9000,000<:0-9999:>as part of a seed round",
+        message: "Raised $900,000<:0-9999:>as part of a seed round",
         type: "default",
     },
     {
